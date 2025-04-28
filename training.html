@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>训练计划 - 增肌训练计划</title>
+    <title>训练管理 - 增肌训练计划</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="icon.png">
 </head>
@@ -13,60 +12,29 @@
     <div class="container">
         <button id="theme-toggle" class="exercise">切换深色模式</button>
         <div class="header">
-            <div class="menu">
-                <button class="menu-button" onclick="document.getElementById('sidebar').style.display = 'block'">主菜单</button>
-            </div>
-        </div>
-
-        <div class="sidebar" id="sidebar" style="display: none;">
-            <button class="exercise" onclick="document.getElementById('sidebar').style.display = 'none'">关闭</button>
-            <h3>主菜单</h3>
             <button class="exercise" onclick="window.location.href='index.html'">返回首页</button>
-            <button class="exercise" onclick="window.location.href='training.html'">训练计划</button>
-            <button class="exercise" onclick="window.location.href='weight.html'">记录体重</button>
         </div>
-
-        <div class="main-content">
-            <div class="stats">
-                <p id="bmi"></p>
-                <div class="chart-container">
-                    <select id="weight-range" onchange="renderProgressCharts()">
-                        <option value="all">全部</option>
-                        <option value="7d">近7日</option>
-                        <option value="1m">近1个月</option>
-                        <option value="6m">近6个月</option>
-                        <option value="1y">近1年</option>
-                    </select>
-                    <h3>体重变化曲线</h3>
-                    <canvas id="bodyWeightChart"></canvas>
-                </div>
-            </div>
-            <h2>添加自定义训练动作</h2>
-            <form class="progress-form" onsubmit="addExercise(event)">
-                <label>动作名称:</label>
-                <input type="text" name="exercise-name" placeholder="输入动作名称" required>
-                <label>示范视频链接 (可选):</label>
-                <input type="url" name="exercise-video" placeholder="输入视频链接">
-                <label>训练日:</label>
-                <select name="exercise-day" required>
-                    <option value="周一">周一</option>
-                    <option value="周二">周二</option>
-                    <option value="周三">周三</option>
-                    <option value="周四">周四</option>
-                    <option value="周五">周五</option>
-                </select>
-                <button type="submit">添加</button>
-            </form>
-            <div id="today-training"></div>
-            <div id="training-suggestion" class="details" aria-hidden="true"></div>
-            <div id="equipment-records"></div>
-            <div id="training-records"></div>
-            <button class="exercise" onclick="checkAchievements()">查看成就</button>
-            <button class="exercise" onclick="clearProgress()">清除所有记录</button>
-            <div id="achievements"></div>
-        </div>
+        <h2>训练管理</h2>
+        <h3>添加自定义训练动作</h3>
+        <form class="custom-exercise-form" onsubmit="addExercise(event)">
+            <label>动作名称:</label>
+            <input type="text" name="exercise-name" placeholder="输入动作名称" required>
+            <label>示范视频链接 (可选):</label>
+            <input type="url" name="exercise-video" placeholder="输入视频链接">
+            <label>训练日:</label>
+            <select name="exercise-day" required>
+                <option value="周一">周一</option>
+                <option value="周二">周二</option>
+                <option value="周三">周三</option>
+                <option value="周四">周四</option>
+                <option value="周五">周五</option>
+            </select>
+            <button type="submit">添加</button>
+        </form>
+        <div id="training-records"></div>
+        <div id="equipment-records"></div>
+        <button class="exercise" onclick="clearProgress()">清除所有记录</button>
     </div>
     <script src="scripts.js"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93737d90b9d0ada4',t:'MTc0NTgxMTEyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
