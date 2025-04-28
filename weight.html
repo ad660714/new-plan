@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记录体重 - 增肌训练计划</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon.png">
+</head>
+<body>
+    <div class="container">
+        <button id="theme-toggle" class="exercise">切换深色模式</button>
+        <div class="header">
+            <button class="exercise" onclick="window.location.href='index.html'">返回首页</button>
+            <button class="exercise" onclick="window.location.href='training.html'">返回训练计划</button>
+        </div>
+        <h2>记录体重与三围</h2>
+        <form class="progress-form" onsubmit="saveWeight(event)">
+            <label>当前体重 (kg):</label>
+            <input type="number" name="weight" placeholder="输入当前体重" required>
+            <label>身高 (cm):</label>
+            <input type="number" name="height" placeholder="输入身高" required>
+            <label>记录日期:</label>
+            <input type="date" name="date" required>
+            <label>胸围 (cm):</label>
+            <input type="number" name="chest" placeholder="输入胸围" step="0.1">
+            <label>腰围 (cm):</label>
+            <input type="number" name="waist" placeholder="输入腰围" step="0.1">
+            <label>臀围 (cm):</label>
+            <input type="number" name="hip" placeholder="输入臀围" step="0.1">
+            <button type="submit">保存</button>
+        </form>
+        <div id="measurement-records"></div>
+    </div>
+    <script src="scripts.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93737d90be09bfc9',t:'MTc0NTgxMTEyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
