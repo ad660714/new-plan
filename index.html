@@ -10,11 +10,16 @@
 </head>
 <body>
     <div class="container">
-        <h2>增肌训练计划</h2>
-        <button class="exercise" onclick="window.location.href='training.html'">开始训练</button>
+        <button id="theme-toggle" class="exercise">切换深色模式</button>
+        <h2>欢迎使用增肌训练计划</h2>
+        <p>点击“开始今日训练”查看你的训练计划，或记录体重变化。</p>
+        <div id="today-training"></div> <!-- 添加训练计划显示区域 -->
+        <button class="exercise" onclick="renderTrainingPlan()">开始今日训练</button>
         <button class="exercise" onclick="window.location.href='weight.html'">记录体重与三围</button>
+        <button class="exercise" onclick="window.location.href='training.html'">管理训练记录</button>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="scripts.js"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93737d90bce0b0ee',t:'MTc0NTgxMTEyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+    <!-- 移除多余的脚本注入代码，保持简洁 -->
 </body>
 </html>
